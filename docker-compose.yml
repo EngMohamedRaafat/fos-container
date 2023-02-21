@@ -1,13 +1,15 @@
 version: "3"
 
 services:
-  fos-app:
+  fos-container:
+    container_name: fos-container
     image: fos:latest
     build: .
     environment:
       - DISPLAY=${DISPLAY}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
     stdin_open: true
     tty: true
-    # privileged: true
+    privileged: true

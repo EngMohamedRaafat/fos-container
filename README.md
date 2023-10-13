@@ -55,6 +55,19 @@ $ docker run -it -d \
 $ xhost +local:$(docker container inspect --format '{{ .Config.Hostname }}' fos-container)
 ```
 
+
+#### For Mac:
+
+```console
+$ docker run -it -d \
+    --name fos-container \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    mohamedraafat/fos:latest
+
+# and download XQuartz
+```
+
 [![Try in PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/docker-library/docs/9efeec18b6b2ed232cf0fbd3914b6211e16e242c/postgres/stack.yml)
 
 ### Environment Variables
